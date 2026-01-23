@@ -1,5 +1,7 @@
-# GCP Terraform Configuration to create a GCP Storage Bucket and a BQ DataSet
-# To be used with DataEngineering ZoomCamp Mod 01 HW Question 7
+# GCP Terraform Configuration 
+
+### To be used with DataEngineering ZoomCamp Mod 01 HW Question 7
+### to create a GCP Storage Bucket and a BQ DataSet
 
 This Terraform configuration creates:
 - A GCS bucket named `de-camp-01-terra-bucket`
