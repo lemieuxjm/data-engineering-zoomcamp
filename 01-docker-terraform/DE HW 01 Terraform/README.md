@@ -1,4 +1,5 @@
-# GCP Terraform Configuration
+# GCP Terraform Configuration to create a GCP Storage Bucket and a BQ DataSet
+# To be used with DataEngineering ZoomCamp Mod 01 HW Question 7
 
 This Terraform configuration creates:
 - A GCS bucket named `de-camp-01-terra-bucket`
@@ -11,29 +12,27 @@ This Terraform configuration creates:
 
 ## Service Account
 
-Based on your screenshots, you have one service account:
+There is one service account:
 
-### 2. terraform-de-runner@de-camp-01.iam.gserviceaccount.com
+### terraform-de-runner@de-camp-01.iam.gserviceaccount.com
 Roles:
 - BigQuery Admin
 - Compute Admin
 - Storage Admin
-
-**Recommendation**: Use `terraform-de-runner` to run Terraform, as it has the necessary permissions.
 
 ## Setup Instructions
 
 ### 1. Authenticate with GCP
 
 ```bash
-# Authenticate with your user account
+# Authenticate with user account
 gcloud auth application-default login
 
 # OR authenticate with the terraform-de-runner service account
 gcloud auth activate-service-account terraform-de-runner@de-camp-01.iam.gserviceaccount.com \
   --key-file=/path/to/terraform-de-runner-key.json
 
-# Set your project
+# Set project
 gcloud config set project de-camp-01
 ```
 
@@ -47,7 +46,7 @@ cp terraform.tfvars.example terraform.tfvars
 
 Edit `terraform.tfvars`:
 ```hcl
-project_id            = "de-camp-01"  # Your actual project ID
+project_id            = "de-camp-01"  # The actual project ID
 region                = "us-central1"
 location              = "US"
 bucket_name           = "de-camp-01-terra-bucket"
