@@ -1,0 +1,26 @@
+id: q5_results
+namespace: dev
+description: |
+  Using bigquery to obtain answer to HW question 5
+  
+tasks:  
+  - id: first_task
+    type: io.kestra.plugin.gcp.bigquery.Query
+    fetchOne: true
+    description: Q5 Count of rows in Yellow Taxi data for March 2021
+    sql: |
+      SELECT COUNT(*) as total_records FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2021_03`;
+
+  - id: output_sql_q5
+    type: io.kestra.plugin.core.log.Log
+    description: Provide answer to Q5
+    message: |
+      There are {{ outputs.first_task.row.total_records }} records
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{ secret('GCP_SERVICE_ACCOUNT') }}"
+      projectId: "{{kv('GCP_PROJECT_ID')}}"
+      location: "{{kv('GCP_LOCATION')}}"
+      bucket: "{{kv('GCP_BUCKET_NAME')}}"      

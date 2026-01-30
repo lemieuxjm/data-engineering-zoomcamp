@@ -1,0 +1,51 @@
+id: q3_results
+namespace: dev
+description: |
+  Using bigquery to obtain answer to HW question 3
+  
+tasks:  
+  - id: first_task
+    type: io.kestra.plugin.gcp.bigquery.Query
+    fetchOne: true
+    description: Q3 Count of rows in Yellow Taxi data for all CSV files in the year 2020
+    sql: |
+      SELECT SUM(count) as total_records
+      FROM (
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_01`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_02`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_03`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_04`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_05`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_06`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_07`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_08`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_09`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_10`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_11`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_12`
+      );
+
+  - id: output_sql_q3
+    type: io.kestra.plugin.core.log.Log
+    description: provide answer to Q3
+    message: |
+      There are {{ outputs.first_task.row.total_records }} records
+
+pluginDefaults:
+  - type: io.kestra.plugin.gcp
+    values:
+      serviceAccount: "{{ secret('GCP_SERVICE_ACCOUNT') }}"
+      projectId: "{{kv('GCP_PROJECT_ID')}}"
+      location: "{{kv('GCP_LOCATION')}}"
+      bucket: "{{kv('GCP_BUCKET_NAME')}}"      
