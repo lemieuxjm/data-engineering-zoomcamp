@@ -9,8 +9,10 @@ This README.md will provide instructions for reproducing the environment necessa
 For GCP
  - setup a gcp project, location, and service account
  - identify a storage bucket name
+
 For Kestra
  - set up an .env_encoded file for the gcp service account
+ 
 Clone the repository at
   [My Zoomcamp Repo](https://github.com/lemieuxjm/data-engineering-zoomcamp).
 
