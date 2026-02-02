@@ -15,7 +15,8 @@ Clone the repository at
   [My Zoomcamp Repo](https://github.com/lemieuxjm/data-engineering-zoomcamp).
 
 > [!NOTE]  
-> I configured Kestra to my GitHub repo via a sync-to-git.yaml which pulled the flows into Kestra
+> I configured Kestra to my GitHub repo via a sync_to_git flow which pulled the flows into Kestra
+> [Sync flows from Git to Kestra](https://kestra.io/plugins/plugin-git/io.kestra.plugin.git.syncflows)
 
 ---
 
