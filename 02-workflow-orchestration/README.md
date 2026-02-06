@@ -59,20 +59,84 @@ docker compose up -d
 9. **Run** `09_gcp_taxi_scheduled.yaml` with a backfill of 2019, 2020, and Jan - June 2021 data for yellow and green datasets
 
 10. **Run** `q3_results.yaml`
-
-   - Look in log for answer to Q3
+    
+   - The answer to this question is found by running this SQL
+```sql
+      SELECT SUM(count) as total_records
+      FROM (
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_01`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_02`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_03`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_04`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_05`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_06`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_07`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_08`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_09`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_10`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_11`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2020_12`
+      );
+```
+   - This flow outputs the answer (24648499 rows) in the flow log message. Review this log message
 
 11. **Run** `q4_results.yaml`
-
-   - Look in log for answer to Q4
+    
+   - The answer to this question is found by running this SQL
+```sql
+      SELECT SUM(count) as total_records
+      FROM (
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_01`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_02`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_03`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_04`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_05`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_06`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_07`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_08`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_09`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_10`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_11`
+          UNION ALL
+        SELECT COUNT(*) as count FROM `de-camp-01.de_hw_02_dataset.green_tripdata_2020_12`
+      );
+```
+   - This flow outputs the answer (1734051 rows) in the flow log message. Review this log message
 
 12. **Run** `q5_results.yaml`
+    
+   - The answer to this question is found by running this SQL
+```sql
+SELECT COUNT(*) as total_records FROM `de-camp-01.de_hw_02_dataset.yellow_tripdata_2021_03`;
 
-   - Look in log for answer to Q5
+```
+   - This flow outputs the answer (1925152 rows) in the flow log message. Review this log message
 
 13. **When finished, shut off Kestra:**
 
 ```bash
 cd 02-workflow-orchestration
 docker compose down
+
 ```
