@@ -211,3 +211,6 @@ instdire/
 
 # Google service account info
 service-account.json
+
+# Terraform
+.terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/linux_amd64
