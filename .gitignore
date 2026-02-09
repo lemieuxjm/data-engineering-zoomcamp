@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Google SDK
+instdire/
+
+# Google service account info
+service-account.json

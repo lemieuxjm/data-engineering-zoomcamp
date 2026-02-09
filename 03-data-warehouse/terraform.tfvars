@@ -1,0 +1,5 @@
+project_id            = "de-camp-01"
+region                = "us-central1"
+location              = "us-central1"
+bucket_name           = "de-camp-03-dw"
+dataset_id            = "de_hw_03_dataset"
