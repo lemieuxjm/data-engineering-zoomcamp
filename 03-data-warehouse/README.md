@@ -9,7 +9,7 @@ This README.md will provide instructions for reproducing the environment necessa
 ### Authentication
 I added the authentication key .json file to my codespace project and then ran (details changed for security):
 ```bash
-    gcloud auth activate-service-account xxxxxx@de-camp-01.iam.gserviceaccount.com   --key-file=<name of service account json file>
+gcloud auth activate-service-account xxxxxx@de-camp-01.iam.gserviceaccount.com   --key-file=<name of service account json file>
 ```
 ---
 
@@ -61,15 +61,15 @@ I also created an outputs.tfvars file
     EOF
 ```
 ---
-## To pull parquet files from source to the Google bucket:
+#### To pull parquet files from source to the Google bucket:
 ```bash
     # One-liner to set vars and run script
     BUCKET_NAME=$(terraform output -raw bucket_name) \
     PROJECT_ID=$(terraform output -raw project_id) \
     python3 load_yellow_taxi_data.py
 ```
-
-## To verify what files are present in the bucket:
+---
+#### To verify what files are present in the bucket:
 ```bash
     gsutil ls gs://de-camp-03-dw
 ```
