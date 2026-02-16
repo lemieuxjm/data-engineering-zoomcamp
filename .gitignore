@@ -214,3 +214,10 @@ service-account.json
 
 # Terraform
 .terraform/providers/registry.terraform.io/hashicorp/google/5.45.2/linux_amd64
+# Default .gitignore content added by dbt Cloud# you shouldn't commit these into source control
+# these are the default directory names, adjust/add to fit your needs
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
+dbt_internal_packages/
