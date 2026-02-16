@@ -1,1 +1,1 @@
-select * from {{ source('raw_data', 'green_tripdata') }} limit 100
+select * from {{ source("raw_data", "green_tripdata") }} limit 100
