@@ -1,4 +1,4 @@
-# Module 4: Analytics Engineering
+# Module 4: Analytics Engineering README in progress
 
 Goal: Transforming the data loaded in DWH into Analytical Views developing a [dbt project](taxi_rides_ny/README.md).
 
