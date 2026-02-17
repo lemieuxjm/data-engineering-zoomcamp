@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: 2
 
 sources:
@@ -119,3 +120,16 @@ sources:
             description: Represents the SR Flag
           - name: Affiliated_base_number
             description: Identifies base number affiliation            
+=======
+version: 2
+
+sources:
+  - name: raw_data
+    description: "Raw data sources for NYC DE"
+    database: de-camp-01 # in BQ this is the Project ID
+    schema: nytaxi # in BQ this is dataset name
+    tables:
+      - name: yellow_tripdata
+      - name: green_tripdata
+
+>>>>>>> 4e968b8f9fc6a6862e6a14b676398bc005101346
