@@ -1,4 +1,4 @@
-# Workflow Orchestration
+# Module 2: Workflow Orchestration
 
 This README.md will provide instructions for reproducing the environment necessary to answer Module 2 homework questions.
 
@@ -140,3 +140,4 @@ cd 02-workflow-orchestration
 docker compose down
 
 ```
+
