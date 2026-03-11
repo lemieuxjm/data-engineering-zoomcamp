@@ -1,4 +1,4 @@
-# Docker, posgres, pgAdmin Configuration  
+# Module 1: Docker, posgres, pgAdmin Configuration  
 
 ### To be used with DataEngineering ZoomCamp Mod 01 Homework
 ### to create three Docker containers
