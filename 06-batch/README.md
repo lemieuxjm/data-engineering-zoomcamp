@@ -3,6 +3,15 @@
 Introduction to Spark and PySpark for data lake creation using NYC Taxi data
 
 ---
+### Contents
+
+There are two files in the 06-batch folder:
+  - README.md
+    - This file
+  - Week6_HW.ipynb
+    - The notebook file that contains Python, PySpark, and SQL code needed to explore and answer the homework questions
+
+---
 
 ### Prerequisites
 
@@ -31,10 +40,15 @@ For this Module and Homework, I set up a local instance of Spark on a Windows 11
   - Cell 1 in the notebook will run PySpark, completing the 2nd bullet point in Homework Question 2.
   - Cell 1 in the notebook will also create a local spark session
   - Execute spark.version was performed outside of the notebook
-  - Answer to Homework Question 1 (What is the output of executing spark.version?): 4.1.1
+  - Answer to Homework Question 1
+    - What is the output of executing spark.version?
+    - 4.1.1
+  - Notebook/code not needed to answer Question 5:
+    - Homework Question 5 asks what local port is used to run Spark's application dashboard
+    - Port 4040
 ---
 
-#### Notebook Steps, Explanation, and Homework
+### Notebook Steps, Explanation, and Homework
 
 Cell 1: 
   - Prepare notebook for pyspark use by importing pyspark and SparkSession
@@ -58,7 +72,9 @@ Cell 5:
 Cell 6:
   - Write the reparitioned data to disk
   - (outside of notebook) Use Windows Explorer to visualize saved files, noting the size of the files
-  - Answer to Homework Question 2 (What is the avg. size of the Parquet files created by this cell?) : 25MG
+  - Answer to Homework Question 2
+    - What is the avg. size of the Parquet files created by this cell?
+    - 25MG
 
 Cell 7:
   - Display schema of Yellow 2025-11 dataset
@@ -94,7 +110,9 @@ Cell 13:
       WHERE pickup_date = '2025-11-15';
 ```
   - Display the results of the SQL query 
-  - Answer to Homework Question 3 (How many taxi trips were started on November 15th?): 162604
+  - Answer to Homework Question 3
+    - How many taxi trips were started on November 15th?
+    - 162604
 
 Cell 14: 
   - Runs SQL query to answer Homework Question 4
@@ -104,7 +122,9 @@ Cell 14:
       FROM yellow_nov_data;
 ```
   - Display the results of the SQL query 
-  - Answer to Homework Question 4 (What is the length of the longest trip (in hours) in the dataset): 90.65
+  - Answer to Homework Question 4
+    - What is the length of the longest trip (in hours) in the dataset
+    - 90.65
 
 Cell 15:
   - Retrieve zone lookup data from official NYC data site using wget
@@ -134,7 +154,9 @@ Cell 19:
       ORDER BY frequency ASC;
 ```
   - Display the results of the SQL query 
-  - Answer to Homework Question 6 (What is the name of the pickup location zone with the fewest records?): (one answer of many) Arden Heights
+  - Answer to Homework Question 6
+    - What is the name of the pickup location zone with the fewest records?
+    - (there were three possible answers, 1 chosen) Arden Heights
 
 
 
