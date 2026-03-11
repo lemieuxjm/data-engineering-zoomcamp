@@ -1,4 +1,4 @@
-# Data Warehouse and BigQuery
+# Module 3: Data Warehouse and BigQuery
 
 This README.md will provide instructions for reproducing the environment necessary to answer Module 3 homework questions.
 
