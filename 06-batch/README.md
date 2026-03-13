@@ -5,12 +5,11 @@ Introduction to Spark and PySpark for data lake creation using NYC Taxi data
 ---
 ### Contents
 
-There are two files in the 06-batch folder:
-  - README.md
-    - This file
-  - Week6_HW.ipynb
-    - The notebook file that contains Python, PySpark, and SQL code needed to explore and answer the homework questions
-
+```
+06-batch
+  ├── README.md          # this file
+  └── Week6_HW.ipynb     # Python notebook with Python, PySpark, and SQL needed to explore and answer the homework questions
+```
 ---
 
 ### Prerequisites
