@@ -20,6 +20,23 @@ Clone the repository at
 > I configured Kestra to my GitHub repo via a sync_to_git flow which pulled the flows into Kestra. See this reference: [Sync flows from Git to Kestra](https://kestra.io/plugins/plugin-git/io.kestra.plugin.git.syncflows)
 
 ---
+## Contents
+```
+02-workflow-orchestration/
+├── flows/						
+│   ├── 06_gcp_kv.yaml					# sets GCP service account, project ID, BQ Dataset, storage bucket & location as KV Store values
+│   ├── 07_gcp_setup.yaml				# Creates GCS bucket and BigQuery dataset
+│   ├── 09_gcp_taxi_scheduled.yaml	 	# set up scheduled retrieval, backfill, and processing of NYC taxi data
+│   ├── q3_results.yaml					# sql and answers to hw Q3
+│   ├── q4_results.yaml					# sql and answers to hw Q3
+│   └── q5_results.yaml					# sql and answers to hw Q3
+├── images/
+│   └── homework.png					# image needed for homework
+├── .env_encoded
+├── README.md							# this file
+└── docker-compose.yml					# docker file to run container
+```
+---
 
 ## Instructions
 
